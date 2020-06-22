@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#27326E"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/EditnewTeamTaskTitlePageText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Edit Task !"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp">
+
+            </TextView>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#F5F6F8"
+                android:backgroundTint="#7D53C6"></View>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/bgitemdoes">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp">
+
+                <TextView
+                    android:id="@+id/EditnewTeamTaskTitleText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Add Title"
+                    android:textColor="#000000"
+                    android:textSize="18sp"></TextView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:id="@+id/EditnewTeamTaskTitleEditText"
+                    android:inputType="text"
+                    android:background="@drawable/bginputtask"
+                    android:hint="What is the goal?"
+                    android:textColorHint="#B5B5B5"
+                    android:paddingLeft="12dp"
+                    android:textColor="@android:color/holo_purple"
+                    >
+
+                </EditText>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/EditnewTeamTaskDescriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:textSize="18sp"></TextView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:id="@+id/EditnewTeamTaskDescriptionEditText"
+                    android:inputType="text"
+                    android:textAlignment="viewStart"
+                    android:background="@drawable/bginputtask"
+                    android:hint="How to achieve the goal?"
+                    android:textColorHint="#B5B5B5"
+                    android:paddingLeft="12dp"
+                    android:textColor="@android:color/holo_purple"
+                    >
+                </EditText>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/EditnewTeamTaskTimeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="TimeLine"
+                    android:textColor="#000000"
+                    android:textSize="18sp"></TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/calenderIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:onClick="DateSetter"
+                        android:src="@drawable/ic_date_range_black_24dp"></ImageView>
+                    <TextView
+                        android:layout_width="80dp"
+                        android:id="@+id/EditTeamTaskdeadlinedateTextView"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="1dp"
+                        android:text="Date:"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark">
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/timeIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="70dp"
+                        android:onClick="TimeSetter"
+                        android:src="@drawable/ic_access_time_butt"></ImageView>
+                    <TextView
+                        android:layout_width="80dp"
+                        android:id="@+id/EditTeamTaskdeadlinetimeTextView"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="1dp"
+                        android:text="Time:"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark">
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Assigned To :"
+                    android:textColor="#000000"
+                    android:textSize="18sp"></TextView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:textAlignment="center"
+                    android:id="@+id/EditAssigningEditText"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/bginputtask">
+                </EditText>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="0dp">
+
+            <CheckBox
+                android:id="@+id/EditStatusCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bginputtask"
+                android:buttonTint="#FB3F31"
+                android:text="Mark Task As Done"></CheckBox>
+        </LinearLayout>
+        <Button
+            android:id="@+id/EditbtnTeamTaskSaveTask"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/bgttsvaebtn"
+            android:fontFamily="@font/aclonica"
+            android:text="Update Changes"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="24sp"></Button>
+
+        <Button
+            android:id="@+id/EditbtnTeamTaskCancelTask"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/btnbgcancel"
+            android:fontFamily="@font/aclonica"
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:textColor="#AFAFAF"
+            android:textSize="24sp"></Button>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

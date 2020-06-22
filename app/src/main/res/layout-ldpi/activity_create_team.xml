@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#27326E"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/BusinessCreateTitlePageText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Create New Team!"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp">
+
+            </TextView>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#F5F6F8"
+                android:backgroundTint="#7D53C6"></View>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/bgitemdoes">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp">
+
+                <TextView
+                    android:id="@+id/newBusinessCreateTeamNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Team Name"
+                    android:textColor="#000000"
+                    android:textSize="18sp"></TextView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:id="@+id/newBusinessCreateTeamNameEditText"
+                    android:inputType="text"
+                    android:background="@drawable/bginputtask"
+                    android:hint="What are you called?"
+                    android:textColorHint="#B5B5B5"
+                    android:paddingLeft="12dp"
+                    android:textColor="@android:color/holo_purple"
+                    >
+
+                </EditText>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/newBusinessCreateTeamMemberText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Add Member"
+                    android:textColor="#000000"
+                    android:textSize="18sp"></TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:layout_width="250dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/newBusinessCreateTeamMemberEditText"
+                        android:inputType="textEmailAddress|textAutoCorrect"
+                        android:textAllCaps="false"
+                        android:background="@drawable/bginputtask"
+                        android:hint="No need to add Yourself"
+                        android:textColorHint="#B5B5B5"
+                        android:paddingLeft="12dp"
+                        android:textColor="@android:color/holo_purple"
+                        >
+                    </EditText>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:id="@+id/addMemberButton"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/bgttsvaebtn"
+                        android:text="Add"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/aclonica"
+                        android:textStyle="bold">
+                    </Button>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCreateTeamSecondTask"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/bgttsvaebtn"
+            android:fontFamily="@font/aclonica"
+            android:text="Create Team"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="24sp"></Button>
+
+        <Button
+            android:id="@+id/btnCancelCreationTeamTask"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/btnbgcancel"
+            android:fontFamily="@font/aclonica"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="#AFAFAF"
+            android:textSize="24sp"></Button>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

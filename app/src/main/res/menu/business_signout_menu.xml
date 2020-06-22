@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/businessSignOut" android:title="Sign Out"></item>
+    <item android:id="@+id/businessSwitchAccount" android:title="Switch Account"></item>
+    <item android:id="@+id/addMember" android:title="Add Member"></item>
+
+</menu>

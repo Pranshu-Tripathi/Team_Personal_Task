@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AccountChoiceActivity"
+        android:orientation="vertical"
+        android:backgroundTint="#FFF"
+        android:background="#FFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#27326E"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/loginTitlePageText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Account!"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose the account that you want right now"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="12sp">
+            </TextView>
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="50dp"
+            android:columnCount="2"
+            android:rowCount="1">
+            <Button
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bgteambtnnew"
+                android:text="Bussiness"
+                android:id="@+id/Business"
+                android:textSize="18sp"
+                android:fontFamily="@font/aclonica"
+                android:textColor="#000000"></Button>
+            <Button
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bgbtnnew"
+                android:textColor="#000000"
+                android:text="Personal"
+                android:id="@+id/Personal"
+                android:fontFamily="@font/aclonica"
+                android:textSize="18sp"></Button>
+        </GridLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
