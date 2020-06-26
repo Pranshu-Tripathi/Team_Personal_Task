@@ -54,7 +54,6 @@ public class BusinessMainActivity extends AppCompatActivity {
     private ArrayList<BusinessDoes> task;
     private BusinessDoesAdapter businessDoesAdapter;
     FirebaseAuth firebaseAuth;
-    private FirebaseUser firebaseUser;
     private boolean admin;
     private String Admin;
 

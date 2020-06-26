@@ -195,40 +195,44 @@ public class JoinTeamActivity extends AppCompatActivity {
                             for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
 
                                 if(dataSnapshot1.exists()){
-
-                                    if(dataSnapshot1.child("Team Name").getValue().toString().equals(nameTeam)){
-                                        Toast.makeText(JoinTeamActivity.this, "team found!", Toast.LENGTH_SHORT).show();
-                                        if(dataSnapshot1.child("Team Admin").getValue().toString().equals(firebaseUser.getUid())){
-                                            Toast.makeText(JoinTeamActivity.this, "Found as Admin!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(JoinTeamActivity.this, BusinessMainActivity.class);
-                                            intent.putExtra("UserPermits", true);
-                                            intent.putExtra("User", firebaseUser.getUid());
-                                            intent.putExtra("TeamName", nameTeam);
-                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                            startActivity(intent);
-                                        }else{
-                                            boolean found = false;
-                                            for(DataSnapshot dataSnapshot2 : dataSnapshot.child(nameTeam).child("Members").getChildren()){
-                                                if(dataSnapshot2.getValue().toString().equals(firebaseUser.getEmail())){
-                                                    Toast.makeText(JoinTeamActivity.this, "Found As Member!", Toast.LENGTH_SHORT).show();
-                                                    Intent intent = new Intent(JoinTeamActivity.this, BusinessMainActivity.class);
-                                                    intent.putExtra("UserPermits", false);
-                                                    intent.putExtra("AdminDetails", dataSnapshot1.child("Team Admin").getValue().toString());
-                                                    intent.putExtra("TeamName", dataSnapshot1.child("Team Name").getValue().toString());
-                                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                    startActivity(intent);
-                                                    found = true;
-                                                    break;
+                                    if(dataSnapshot1.child("Team Name").exists()) {
+                                        if (dataSnapshot1.child("Team Name").getValue().toString().equals(nameTeam)) {
+                                            Toast.makeText(JoinTeamActivity.this, "team found!", Toast.LENGTH_SHORT).show();
+                                            if (dataSnapshot1.child("Team Admin").getValue().toString().equals(firebaseUser.getUid())) {
+                                                Toast.makeText(JoinTeamActivity.this, "Found as Admin!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(JoinTeamActivity.this, BusinessMainActivity.class);
+                                                intent.putExtra("UserPermits", true);
+                                                intent.putExtra("User", firebaseUser.getUid());
+                                                intent.putExtra("TeamName", nameTeam);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                startActivity(intent);
+                                            } else {
+                                                boolean found = false;
+                                                for (DataSnapshot dataSnapshot2 : dataSnapshot.child(nameTeam).child("Members").getChildren()) {
+                                                    if (dataSnapshot2.getValue().toString().equals(firebaseUser.getEmail())) {
+                                                        Toast.makeText(JoinTeamActivity.this, "Found As Member!", Toast.LENGTH_SHORT).show();
+                                                        Intent intent = new Intent(JoinTeamActivity.this, BusinessMainActivity.class);
+                                                        intent.putExtra("UserPermits", false);
+                                                        intent.putExtra("AdminDetails", dataSnapshot1.child("Team Admin").getValue().toString());
+                                                        intent.putExtra("TeamName", dataSnapshot1.child("Team Name").getValue().toString());
+                                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                        startActivity(intent);
+                                                        found = true;
+                                                        break;
+                                                    }
+                                                }
+                                                if (!found) {
+                                                    Toast.makeText(JoinTeamActivity.this, "Not Found!", Toast.LENGTH_SHORT).show();
                                                 }
                                             }
-                                            if(!found){
-                                                Toast.makeText(JoinTeamActivity.this, "Not Found!", Toast.LENGTH_SHORT).show();
-                                            }
+                                            found_team = true;
+                                            break;
                                         }
-                                        found_team = true;
-                                        break;
+                                    }else{
+                                        Toast.makeText(JoinTeamActivity.this, "Deleted incomplete team", Toast.LENGTH_SHORT).show();
+                                        dataSnapshot1.getRef().removeValue();
                                     }
                                 }
                             }
